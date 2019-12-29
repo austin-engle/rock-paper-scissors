@@ -24,50 +24,51 @@ while p1_counter < 3 and p2_counter < 3:
 
     num = input("Pick one of the following: 1: Rock, 2: Paper, 3: Scissors:\n")
 
-    if int(num) > 3:
-        continue
-    
-    p1 = t[num]
+    if num == '1' or num == '2' or num == '3':
 
-    computer = t[str(randint(1,3))]
+        p1 = t[num]
 
-    print(f'\nPlayer 1: {p1} \nComputer: {computer}')
-    sleep(0.5)
+        computer = t[str(randint(1,3))]
 
-    if p1 == computer:
-        print('\nTie!\n')
+        print(f'\nPlayer 1: {p1} \nComputer: {computer}')
+        sleep(0.5)
 
-    elif p1 == 'Rock':
-        if computer == 'Scissors':
-            print(f'\nYou win: {p1} beats {computer}\n')
-            p1_counter+=1
-            
+        if p1 == computer:
+            print('\nTie!\n')
+
+        elif p1 == 'Rock':
+            if computer == 'Scissors':
+                print(f'\nYou win: {p1} beats {computer}\n')
+                p1_counter+=1
+                
+            else:
+                print(f'\nYou lose: {p1} loses to {computer}\n')
+                p2_counter+=1
+        
+        elif p1 == 'Paper':
+            if computer == 'Rock':
+                print(f'\nYou win: {p1} beats {computer}\n')
+                p1_counter+=1
+                
+            else:
+                print(f'\nYou lose: {p1} loses to {computer}\n')
+                p2_counter+=1
+
+        elif p1 == 'Scissors':
+            if computer == 'Paper':
+                print(f'\nYou win: {p1} beats {computer}\n')
+                p1_counter+=1
+                
+            else:
+                print(f'\nYou lose: {p1} loses to {computer}\n')
+                p2_counter+=1
+
         else:
-            print(f'\nYou lose: {p1} loses to {computer}\n')
-            p2_counter+=1
-    
-    elif p1 == 'Paper':
-        if computer == 'Rock':
-            print(f'\nYou win: {p1} beats {computer}\n')
-            p1_counter+=1
-            
-        else:
-            print(f'\nYou lose: {p1} loses to {computer}\n')
-            p2_counter+=1
-
-    elif p1 == 'Scissors':
-        if computer == 'Paper':
-            print(f'\nYou win: {p1} beats {computer}\n')
-            p1_counter+=1
-            
-        else:
-            print(f'\nYou lose: {p1} loses to {computer}\n')
-            p2_counter+=1
-
+            print('\nInvalid Input\n')
+        
+        sleep(3)
     else:
-        print('\nInvalid Input\n')
-    
-    sleep(3)
+        continue
 
 if p1_counter == 3:
     print(f'Congratulations, You Win: {p1_counter}:{p2_counter}')
