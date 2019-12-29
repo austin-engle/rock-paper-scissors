@@ -9,7 +9,7 @@ from os import system
 p1_counter = 0
 p2_counter = 0
 
-t = {
+options = {
     "1" : "Rock",
     "2" : "Paper",
     "3" : "Scissors"
@@ -26,9 +26,9 @@ while p1_counter < 3 and p2_counter < 3:
 
     if num == '1' or num == '2' or num == '3':
 
-        p1 = t[num]
+        p1 = options[num]
 
-        computer = t[str(randint(1,3))]
+        computer = options[str(randint(1,3))]
 
         print(f'\nPlayer 1: {p1} \nComputer: {computer}')
         sleep(0.5)
