@@ -9,7 +9,11 @@ from os import system
 p1_counter = 0
 p2_counter = 0
 
-t = ['Rock','Paper','Scissors']
+t = {
+    "1" : "Rock",
+    "2" : "Paper",
+    "3" : "Scissors"
+}
 
 while p1_counter < 3 and p2_counter < 3:
 
@@ -18,9 +22,14 @@ while p1_counter < 3 and p2_counter < 3:
     print('Score')
     print(f' {p1_counter}:{p2_counter}\n')
 
-    p1 = input("Type one of the following: Rock, Paper, Scissors:\n").capitalize()
+    num = input("Pick one of the following: 1: Rock, 2: Paper, 3: Scissors:\n")
 
-    computer = t[randint(0,2)]
+    if int(num) > 3:
+        continue
+    
+    p1 = t[num]
+
+    computer = t[str(randint(1,3))]
 
     print(f'\nPlayer 1: {p1} \nComputer: {computer}')
     sleep(0.5)
